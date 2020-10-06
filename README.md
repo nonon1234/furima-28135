@@ -19,14 +19,13 @@
 ## items テーブル
 | Column           | Type       | Options                        |
 | ---------------- | ---------- | ------------------------------ |
-| image            | text       | null: false                    |
 | item             | string     | null: false                    |
 | item_description | text       | null: false                    |
-| category         | string     | null: false                    |
-| status           | string     | null: false                    |
-| sipping_fee      | string     | null: false                    |
-| sipping_area     | string     | null: false                    |
-| sipping_time     | string     | null: false                    |
+| category         | integer    | null: false                    |
+| status           | integer    | null: false                    |
+| sipping_fee      | integer    | null: false                    |
+| sipping_area     | integer    | null: false                    |
+| sipping_time     | integer    | null: false                    |
 | price            | integer    | null: false                    |
 | user_id          | references | null: false, foreign_key: true |
 
