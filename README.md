@@ -27,7 +27,7 @@
 | sipping_area_id  | integer    | null: false                    |
 | sipping_time_id  | integer    | null: false                    |
 | price            | integer    | null: false                    |
-| user_id          | references | null: false, foreign_key: true |
+| user             | references | null: false, foreign_key: true |
 
 ### Association
 - belongs_to : user
@@ -36,8 +36,8 @@
 ## purchases テーブル
 | Column     | Type       | Options                        |
 | ---------- | ---------- | ------------------------------ |
-| item_id    | references | null: false, foreign_key: true |
-| user_id    | references | null: false, foreign_key: true |
+| item       | references | null: false, foreign_key: true |
+| user       | references | null: false, foreign_key: true |
 
 ### Association
 - belongs_to : user
