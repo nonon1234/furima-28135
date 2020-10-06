@@ -21,11 +21,11 @@
 | ---------------- | ---------- | ------------------------------ |
 | item             | string     | null: false                    |
 | item_description | text       | null: false                    |
-| category         | integer    | null: false                    |
-| status           | integer    | null: false                    |
-| sipping_fee      | integer    | null: false                    |
-| sipping_area     | integer    | null: false                    |
-| sipping_time     | integer    | null: false                    |
+| category_id      | integer    | null: false                    |
+| status_id        | integer    | null: false                    |
+| sipping_fee_id   | integer    | null: false                    |
+| sipping_area_id  | integer    | null: false                    |
+| sipping_time_id  | integer    | null: false                    |
 | price            | integer    | null: false                    |
 | user_id          | references | null: false, foreign_key: true |
 
@@ -45,14 +45,14 @@
 - has_one : address
 
 ## addresses テーブル
-| Column       | Type    | Options     |
-| ------------ | ------- | ----------- |
-| postcode     | string  | null: false |
-| prefecture   | integer | null: false |
-| city         | string  | null: false |
-| block        | string  | null: false |
-| building     | string  |             |
-| phone_number | string  | null: false |
+| Column        | Type    | Options     |
+| ------------- | ------- | ----------- |
+| postcode      | string  | null: false |
+| prefecture_id | integer | null: false |
+| city          | string  | null: false |
+| block         | string  | null: false |
+| building      | string  |             |
+| phone_number  | string  | null: false |
 
 ### Association
 - belongs_to : purchase
