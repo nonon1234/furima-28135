@@ -19,8 +19,8 @@
 ## items テーブル
 | Column           | Type       | Options                        |
 | ---------------- | ---------- | ------------------------------ |
-| item             | string     | null: false                    |
-| item_description | text       | null: false                    |
+| name             | string     | null: false                    |
+| description      | text       | null: false                    |
 | category_id      | integer    | null: false                    |
 | status_id        | integer    | null: false                    |
 | sipping_fee_id   | integer    | null: false                    |
