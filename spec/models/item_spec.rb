@@ -11,9 +11,6 @@ RSpec.describe Item, type: :model do
       it '全ての項目が正しく入力されていれば登録できること' do
         expect(@item).to be_valid
       end
-
-      
-
     end
 
     context '新規登録がうまくいかないとき' do
@@ -108,7 +105,7 @@ RSpec.describe Item, type: :model do
       end
 
       it 'priceが9999999を超えると登録できない' do
-        @item.price = 10000000
+        @item.price = 10_000_000
         @item.valid?
         expect(@item.errors.full_messages).to include('Price is not included in the list')
       end
@@ -122,11 +119,8 @@ RSpec.describe Item, type: :model do
       it 'userが紐づいていないと登録できない' do
         @item.user = nil
         @item.valid?
-        expect(@item.errors.full_messages).to include("User must exist")
+        expect(@item.errors.full_messages).to include('User must exist')
       end
-
     end
-
-
   end
 end

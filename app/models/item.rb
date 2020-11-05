@@ -15,11 +15,10 @@ class Item < ApplicationRecord
   end
 
   with_options presence: true do
-    validates :price, inclusion: { in: 300..9999999 }
+    validates :price, inclusion: { in: 300..9_999_999 }
   end
-  
+
   with_options numericality: { other_than: 0 } do
     validates :category_id, :sipping_area_id, :status_id, :sipping_fee_id, :sipping_time_id
   end
-
 end
