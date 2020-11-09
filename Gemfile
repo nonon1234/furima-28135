@@ -64,3 +64,5 @@ group :production do
 end
 
 gem 'devise'
+gem 'image_processing', '~> 1.2'
+gem 'active_hash'
