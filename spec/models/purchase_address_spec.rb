@@ -61,11 +61,10 @@ RSpec.describe PurchaseAddress, type: :model do
       end
 
       it 'phone_numberが12桁以上だと保存できない' do
-        @purchase_address.phone_number = 1111111222233
+        @purchase_address.phone_number = 1_111_111_222_233
         @purchase_address.valid?
         expect(@purchase_address.errors.full_messages).to include('Phone number is too long (maximum is 11 characters)')
       end
-      
     end
   end
 end
