@@ -11,7 +11,7 @@ class PurchaseAddress
     validates :city, :block
   end
   validates :prefecture_id, numericality: { other_than: 0, message: "can't be blank" }
-  validates :phone_number, length: { is: 11, message: "is invalid. Not 11 characters"}
+  validates :phone_number, length: { maximum: 11 }
 
   def save
     purchase = Purchase.create(user_id: 1, item_id: 41)
