@@ -13,8 +13,8 @@ class PurchaseAddress
   validates :prefecture_id, numericality: { other_than: 0, message: "can't be blank" }
   validates :phone_number, length: { maximum: 11 }
 
-  def save
-    purchase = Purchase.create(user_id: 1, item_id: 41)
+  def save(user_id,item_id)
+    purchase = Purchase.create(user_id: user_id, item_id: item_id)
     Address.create(postcode: postcode, prefecture_id: prefecture_id, city: city, block: block, building: building, phone_number: phone_number, purchase_id: purchase.id)
   end
 end
