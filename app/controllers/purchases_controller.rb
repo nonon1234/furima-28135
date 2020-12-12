@@ -12,6 +12,7 @@ class PurchasesController < ApplicationController
     if @purchase_address.valid?
       pay_item
       @purchase_address.save(current_user.id, @item.id)
+      @item.update( sold: true )
       redirect_to root_path
     else
       render action: :index
