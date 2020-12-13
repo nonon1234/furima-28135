@@ -11,7 +11,7 @@ class PurchasesController < ApplicationController
     @purchase_address = PurchaseAddress.new(purchase_params)
     if @purchase_address.valid?
       pay_item
-      @purchase_address.save(current_user.id, @item.id)
+      @purchase_address.save
       @item.update(sold: true)
       redirect_to root_path
     else
@@ -22,7 +22,7 @@ class PurchasesController < ApplicationController
   private
 
   def purchase_params
-    params.require(:purchase_address).permit(:postcode, :prefecture_id, :city, :block, :building, :phone_number).merge(token: params[:token])
+    params.require(:purchase_address).permit(:postcode, :prefecture_id, :city, :block, :building, :phone_number).merge(token: params[:token], user_id: current_user.id, item_id: @item.id)
   end
 
   def set_item
