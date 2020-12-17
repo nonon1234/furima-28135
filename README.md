@@ -28,6 +28,7 @@
 | sipping_time_id  | integer    | null: false                    |
 | price            | integer    | null: false                    |
 | user             | references | null: false, foreign_key: true |
+| sold             | boolean    | default: false, null: false    |
 
 ### Association
 - belongs_to : user
